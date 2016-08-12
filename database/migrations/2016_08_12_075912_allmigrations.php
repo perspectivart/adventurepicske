@@ -33,8 +33,8 @@ class Allmigrations extends Migration
 		});
 		Schema::create("admins",function(Blueprint $table){
 			$table->increments("id");
-			$table->integer("suser_id")->unsigned();
-			$table->foreign("suser_id")->references("id")->on("system_user");
+			$table->integer("sysuser_id")->unsigned();
+			$table->foreign("sysuser_id")->references("id")->on("system_users");
 			$table->timestamps();
 			
 		});
@@ -46,14 +46,14 @@ class Allmigrations extends Migration
 		Schema::create("files",function(Blueprint  $table){
 			$table->increments("id");
 			$table->integer("sysuser_id")->unsigned();
-			$table->foreign("sysuser_id")->references("id")->on("system_user");
+			$table->foreign("sysuser_id")->references("id")->on("system_users");
 			$table->string("file_name");
 			$table->timestamps();
 		});
 		Schema::create("posts",function(Blueprint  $table){
 			$table->increments("id");
 			$table->integer("sysuser_id")->unsigned();
-			$table->foreign("sysuser_id")->references("id")->on("system_user");
+			$table->foreign("sysuser_id")->references("id")->on("system_users");
 			$table->text("title");
 			$table->text("body");
             $table->integer("file_id")->unsigned();
