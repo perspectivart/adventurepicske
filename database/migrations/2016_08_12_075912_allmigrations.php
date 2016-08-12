@@ -61,7 +61,14 @@ class Allmigrations extends Migration
 			$table->timestamps();
 			
 		});
-    }
+		Schema::create("subscribers",function(Blueprint  $table){
+			$table->increments("id");
+			$table->string("name");
+			$table->string("email")->unique();
+			$table->timestamps();
+		});
+		
+    };
 
     /**
      * Reverse the migrations.
@@ -75,5 +82,8 @@ class Allmigrations extends Migration
 		 Schema::drop('system_user');
 		 Schema::drop('admins');
 		 Schema::drop('password_resets');
+		 Schema::drop('posts');
+		 Schema::drop('files');
+		  Schema::drop('subscribers');
     }
 }
