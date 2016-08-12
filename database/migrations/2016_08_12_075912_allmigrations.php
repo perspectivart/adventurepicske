@@ -21,7 +21,7 @@ class Allmigrations extends Migration
             $table->rememberToken();
             $table->timestamps();
 		});
-		Schema::create("system_user",function(Blueprint $table){
+		Schema::create("system_users",function(Blueprint $table){
 			$table->increments("id");
 			$table->integer("user_id")->unsigned();
 			$table->foreign("user_id")->references("id")->on("users");
