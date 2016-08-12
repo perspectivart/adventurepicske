@@ -38,7 +38,11 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Admin Homepage</div>
+				<div>
+				
+				
+				</div>
             </div>
         </div>
     </body>

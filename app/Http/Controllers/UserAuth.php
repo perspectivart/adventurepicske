@@ -11,7 +11,7 @@ class UserAuth extends Controller
 {
     //
 	public function authenticate(Request $request){
-		echo"hit";
+		echo"hit here";
 		
 	}
 	
