@@ -50,10 +50,10 @@ class Allmigrations extends Migration
 			$table->string("file_name");
 			$table->timestamps();
 		});
-		Schema::create("post",function(Blueprint  $table){
+		Schema::create("posts",function(Blueprint  $table){
 			$table->increments("id");
-			$table->integer("suser_id")->unsigned();
-			$table->foreign("suser_id")->references("id")->on("system_user");
+			$table->integer("sysuser_id")->unsigned();
+			$table->foreign("sysuser_id")->references("id")->on("system_user");
 			$table->text("title");
 			$table->text("body");
             $table->integer("file_id")->unsigned();
