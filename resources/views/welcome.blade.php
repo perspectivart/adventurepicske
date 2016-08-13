@@ -38,40 +38,7 @@
 							<h3 class="icon-text">CAPTURE</h3>
 						</div>
 
-<<<<<<< HEAD
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-          
-        <link href="/css/app.css" rel="stylesheet" type="text/css">
-		<script src="/js/jquery-2.2.4.min.js"></script>
-        <script src="/js/jquery-ui.min.js"></script>
-		<meta name="csrf-token" content="{{ csrf_token() }}">
-    </head>
-    <body>
-        <div class="container">
-        <div class="row">
-		          <div class="content">
-                <div class="title"> Homepage</div>
-				<div>
-				    <p>
-					welcome to admin  landing page
-					</p>
-				    <a href=#> Register</a>
-				</div>
-            </div>
-			 
-	    </div>
-		
-		
-		
-		<div class="row" name="updatediv">
-		
-		
-		
-		</div>
-		
-		
-        </div>
-=======
+
 						<div class="col-md-2 col-sm-3 col-xs-3">
 							<a href="#" class="icon-button"><img class="icon" src="images/remember.png" alt="tavel"></a>
 							<h3 class="icon-text">REMEMBER</h3>
@@ -249,6 +216,6 @@ We will take care of the booking</p>
 				echo '<h4 class="copyright">&copy AdventurePics   '.$day.'   '.$date.'    '.$month.'    '.$year.'</h4>';
 			?>
 		</div>
->>>>>>> 0d09c7c3102705e8907e58eb620ae02941b3e758
+
     </body>
 </html>

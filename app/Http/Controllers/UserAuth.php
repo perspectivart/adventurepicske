@@ -13,7 +13,19 @@ class UserAuth extends Controller
 {
     //
 	public function authenticate(Request $request){
+		$email=$request->email;
+		$password=$request->password;
 		
+		$aut=Auth::attempt(["email"=>$email,"password"=>$password]);
+		if($aut){
+			return redirect("");
+			
+		}
+		else{
+			$error=["message"=>"invalid credentials"];
+			return redirect("")->with($error);
+			
+		}
 	
 	    
 	
@@ -35,11 +47,6 @@ class UserAuth extends Controller
 		
 						
 					}
-	public function register(Request $request){
-		//$val=Validator::make($request->all(),[]);
-		echo "hit";
-		
-		
-	}
+	
 	
 }

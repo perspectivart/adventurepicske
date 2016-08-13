@@ -11,12 +11,13 @@ $(document).ready(function (){
 		 
 		 var data=new FormData(this);
 					 $.ajax({
-					url:'/admin/register',
+					url:'/admin/login',
 					type:'POST',
 					data:data,
 					processData:false,
 					contentType:false,
 					success:function (data){
+						$("#update").html(data);
 						
 					}
 					

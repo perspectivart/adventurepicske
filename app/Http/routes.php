@@ -15,11 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// log in admin
-Route::get('/admin/login',"UserAuth@authenticate");
 
-//register admin
-Route::get('/admin/register',"UserAuth@register");
+// show log in to admin
+Route::get('/admin/home',"Admin@showlog");
+
+// log in admin
+Route::post('/admin/login',"UserAuth@authenticate");
+
 
 //return admin home
 //Route::get('/admin/home',"UserAuth@authenticate");
