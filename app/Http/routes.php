@@ -34,3 +34,7 @@ Route::post('/admin/login',"UserAuth@authenticate");
 
 //send mails
 //Route::get('/admin/send/mail',"UserAuth@authenticate");
+
+Route::auth();
+
+//Route::get('/home', 'HomeController@index');

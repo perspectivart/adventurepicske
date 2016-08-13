@@ -18,13 +18,13 @@ class UserAuth extends Controller
 		
 		$aut=Auth::attempt(["email"=>$email,"password"=>$password]);
 		if($aut){
-			return redirect("");
+			return redirect("/admin/home");
 			
 		}
 		else{
-			$error=["message"=>"invalid credentials"];
-			return redirect("")->with($error);
-			
+			//$error=["message"=>"invalid credentials"];
+			//return redirect("")->with($error);
+			echo "fail";
 		}
 	
 	    
