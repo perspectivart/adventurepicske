@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Admin Homepage</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-         <link href="css/app.css" type="text/css" > 
-        
+          
+        <link href="/css/app.css" rel="stylesheet" type="text/css">
+		<script src="/js/jquery-2.2.4.min.js"></script>
+        <script src="/js/jquery-ui.min.js"></script>
+		<meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body>
         <div class="container">
@@ -31,9 +34,10 @@
 				   </div>
 				   <div class="form-group">
 				        <label for="confirm_password" class="sr-only">Confirm Password</label>
-						<input type="password" class="form-control" id="" placeholder="Enter Password">
+						<input type="password" class="form-control" id="" placeholder="Confirm Password">
 				   
 				   </div>
+				   <button type="button" class="btn btn-default">Register</button>
 				
 				</form>
 				
