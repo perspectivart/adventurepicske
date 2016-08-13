@@ -7,6 +7,7 @@ use Mail;
 use App\Http\Requests;
 use Auth;
 use App\User;
+use Validator;
 
 class UserAuth extends Controller
 {
@@ -35,6 +36,9 @@ class UserAuth extends Controller
 						
 					}
 	public function register(Request $request){
+		//$val=Validator::make($request->all(),[]);
+		echo "hit";
+		
 		
 	}
 	

@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('/admin/login',"UserAuth@authenticate");
 
 //register admin
-//Route::get('/admin/register',"UserAuth@register");
+Route::get('/admin/register',"UserAuth@register");
 
 //return admin home
 //Route::get('/admin/home',"UserAuth@authenticate");
