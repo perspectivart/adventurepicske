@@ -204,5 +204,16 @@ We will take care of the booking</p>
 				</div>	
 			</div>
 		</div>
+		
+		<div class="container">
+			<?php
+				$day = date('l');
+				$date = date('d');
+				$month = date('M');
+				$year = date('Y');
+			
+				echo '<h4 class="copyright">&copy AdventurePics   '.$day.'   '.$date.'    '.$month.'    '.$year.'</h4>';
+			?>
+		</div>
     </body>
 </html>
