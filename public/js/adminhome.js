@@ -17,6 +17,7 @@ $(document).ready(function (){
 					processData:false,
 					contentType:false,
 					success:function (data){
+						$("#login-div").remove();
 						$("#update").html(data);
 						
 					}
@@ -26,6 +27,22 @@ $(document).ready(function (){
 		  
 		  
 	  });
+	  $("#pass-reset").on("click",function(){
+		     $.ajax({
+				 url:"/password/reset/",
+				 type:"GET",
+				 success:function(data){
+					   $("#login-div").remove();
+						$("#update").html(data);
+					 
+				 }
+				 
+				 
+			 });
+		  
+		  
+		  
+	  })
 	
 	
 	

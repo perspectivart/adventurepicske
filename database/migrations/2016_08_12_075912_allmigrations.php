@@ -16,28 +16,14 @@ class Allmigrations extends Migration
 		Schema::create('users',function (Blueprint $table){
 			
 			$table->increments("id");
+			$table->integer("user_type");
 	        $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
 		});
-		Schema::create("system_users",function(Blueprint $table){
-			$table->increments("id");
-			$table->integer("user_id")->unsigned();
-			$table->foreign("user_id")->references("id")->on("users");
-			$table->integer("usertype");
-			$table->timestamps();
-			
-			
-			
-		});
-		Schema::create("admins",function(Blueprint $table){
-			$table->increments("id");
-			$table->integer("sysuser_id")->unsigned();
-			$table->foreign("sysuser_id")->references("id")->on("system_users");
-			$table->timestamps();
-			
-		});
+		
+		
 		Schema::create('password_resets', function (Blueprint $table) {
             $table->string('email')->index();
             $table->string('token')->index();
@@ -45,15 +31,15 @@ class Allmigrations extends Migration
         });
 		Schema::create("files",function(Blueprint  $table){
 			$table->increments("id");
-			$table->integer("sysuser_id")->unsigned();
-			$table->foreign("sysuser_id")->references("id")->on("system_users");
+			$table->integer("user_id")->unsigned();
+			$table->foreign("user_id")->references("id")->on("users");
 			$table->string("file_name");
 			$table->timestamps();
 		});
 		Schema::create("posts",function(Blueprint  $table){
 			$table->increments("id");
-			$table->integer("sysuser_id")->unsigned();
-			$table->foreign("sysuser_id")->references("id")->on("system_users");
+			$table->integer("user_id")->unsigned();
+			$table->foreign("user_id")->references("id")->on("users");
 			$table->text("title");
 			$table->text("body");
             $table->integer("file_id")->unsigned();

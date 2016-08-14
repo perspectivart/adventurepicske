@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-         'email', 'password',
+         'email', 'password',"user_type",
     ];
 
     /**
@@ -23,7 +23,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-	public function sys_user(){
-		return $this->hasOne("App\SystemUser");
+	//link to post
+	public function posts(){
+		return $this->hasMany("App\Post");
+	}
+	public function files(){
+		return $this->hasMany("App\File","user_id");
 	}
 }

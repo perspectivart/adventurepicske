@@ -8,8 +8,8 @@
              <script src="/js/adminhome.js"></script>	 			 
    </head>
    <body>
-        <div class="container">
-			     <div class="row" >
+        <div class="container" >
+			     <div class="row" id="login-div">
 				     <div>
 					        
 					     <form encytype="multipart/form-data" role="form" class="form-inline"> 
@@ -25,14 +25,17 @@
 							  <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 							  <button type="submit" class="btn btn-default" id="login-btn">Log In</button>
 						 </form>
-						 <p><a href=#>Forgot Password?</a></p>
+						 <p><a href=# id="pass-reset">Forgot Password?</a></p>
 					 </div>
+                    
 					 
 					
-					 <div id="update">
+					 
+				 </div>
+				 
+				 <div class="row" id="update">
 					 
 					 
-					 </div>
 				 </div>
 			 </div>
    

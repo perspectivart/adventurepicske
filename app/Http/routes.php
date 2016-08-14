@@ -10,31 +10,36 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-// show welcome page
-Route::get('/', function () {
-    return view('welcome');
+
+Route::group(["middleware"=>["web"]],function(){
+	         // show welcome page
+			Route::get('/', function () {
+				return view('welcome');
+			});
+
+
+			// show log in to admin
+			Route::get('/admin/home',"Admin@showlog");
+
+			// log in admin
+			Route::post('/admin/login',"UserAuth@authenticate");
+
+
+			//log out
+			Route::get('/admin/logout',"UserAuth@logout");
+
+			//save subscribers
+			//Route::post('/subscribe',"MailList@sub");
+
+			//view posts
+			//Route::get('/admin/view/post',"UserAuth@authenticate");
+
+			//send mails
+			//Route::get('/admin/send/mail',"UserAuth@authenticate");
+
+			Route::auth();
+
+			//Route::get('/home', 'HomeController@index');
+	
+	    
 });
-
-
-// show log in to admin
-Route::get('/admin/home',"Admin@showlog");
-
-// log in admin
-Route::post('/admin/login',"UserAuth@authenticate");
-
-
-//return admin home
-//Route::get('/admin/home',"UserAuth@authenticate");
-
-//send blogpost
-//Route::get('/admin/send/post',"UserAuth@authenticate");
-
-//view posts
-//Route::get('/admin/view/post',"UserAuth@authenticate");
-
-//send mails
-//Route::get('/admin/send/mail',"UserAuth@authenticate");
-
-Route::auth();
-
-//Route::get('/home', 'HomeController@index');

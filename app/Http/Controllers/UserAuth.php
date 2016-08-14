@@ -18,13 +18,13 @@ class UserAuth extends Controller
 		
 		$aut=Auth::attempt(["email"=>$email,"password"=>$password]);
 		if($aut){
-			return redirect("/admin/home");
+			return view("admin.adminpost");
 			
 		}
 		else{
-			//$error=["message"=>"invalid credentials"];
-			//return redirect("")->with($error);
-			echo "fail";
+			$error=["message"=>"invalid credentials"];
+			return redirect("/admin/home")->with($error);
+			
 		}
 	
 	    
@@ -45,6 +45,11 @@ class UserAuth extends Controller
 					else{echo"fail";}
 				
 		
+						
+					}
+					public function logout(){
+						Auth::logout();
+						return redirect("/admin/home");
 						
 					}
 	

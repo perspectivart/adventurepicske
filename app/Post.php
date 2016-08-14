@@ -8,11 +8,11 @@ class Post extends Model
 {
     //
 	protected $fillable = [
-         'sysuser_id',"title","body","file_id"
+         'user_id',"title","body","file_id"
     ];
-	//link to sysy user
-	public function sys(){
-		return $this->belongsTo("App\SystemUser","sysuser_id");
+	//link to usser
+	public function user(){
+		return $this->belongsTo("App\User");
 	}
 	//link to file
 	public function files(){
